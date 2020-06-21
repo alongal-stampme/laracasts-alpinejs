@@ -10,14 +10,16 @@
 
 <body class="m-8 p-8">
 
-    <div x-data="{
-            first: 0,
-            second: 0
-        }"
-    >
-        <input type="text" x-model.number="first"> +
-        <input type="text" x-model.number="second"> =
-        <output x-text="first + second"></output>
+    <div x-data="{ currentTab: 'first' }">
+        <button @click="currentTab = 'first'">First</button>
+        <button @click="currentTab = 'second'">Second</button>
+        <button @click="currentTab = 'third'">Third</button>
+
+        <div style="border: 1px dotted grey; padding: 1rem;">
+            <div x-show="currentTab === 'first'">First tab.</div>
+            <div x-show="currentTab === 'second'">Second tab.</div>
+            <div x-show="currentTab === 'third'">Third tab.</div>
+        </div>
     </div>
 
 </body>
