@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/lesson', function () {
     return view('lesson');
 });
+Route::get('/transitions', function () {
+    return view('transitions');
+});
