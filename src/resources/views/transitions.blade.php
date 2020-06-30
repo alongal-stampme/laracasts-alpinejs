@@ -26,6 +26,22 @@
 
         <button @click="show = ! show">Toggle</button>
     </div>
+
+    <div x-data="{ show: false }" @click.away="show = false">
+        <button @click="show = ! show">Links</button>
+
+        <div class="absolute bg-black text-white py-2 rounded mt-1"
+             x-show="show"
+             x-transition:enter="transition transform duration-200 ease-out"
+             x-transition:enter-start="scale-75"
+             x-transition:leave="transition transform duration-100 ease-in"
+             x-transition:leave-end="opacity-0 scale-90"
+        >
+            <a href="#" class="block hover:bg-gray-800 py-px text-xs px-4">Edit</a>
+            <a href="#" class="block hover:bg-gray-800 py-px text-xs px-4">Delete</a>
+            <a href="#" class="block hover:bg-gray-800 py-px text-xs px-4">Report Spam</a>
+        </div>
+    </div>
 </body>
 
 </html>
