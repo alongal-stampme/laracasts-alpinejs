@@ -22,3 +22,6 @@ Route::get('/lesson', function () {
 Route::get('/transitions', function () {
     return view('transitions');
 });
+Route::get('/events', function () {
+    return view('events');
+});
